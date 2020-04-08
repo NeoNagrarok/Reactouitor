@@ -1,4 +1,3 @@
-import React from 'react';
 import './TouitAPI.scss';
 
 const TouitAPI = (props) => {
