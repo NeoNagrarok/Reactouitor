@@ -5,7 +5,9 @@ import SendMessageForm from './SendMessageForm';
 const Header = (props) => {
 	return (
 		<header>
-			<h1>Reactouitor</h1>
+			<h1>
+				Reactouitor - {props.date}
+			</h1>
 			<SendMessageForm />
 		</header>
 	);

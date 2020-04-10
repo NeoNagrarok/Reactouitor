@@ -1,0 +1,30 @@
+.touit
+{
+	background-color: yellow;
+	margin: 0.5em;
+	width: 15em;
+	display: flex;
+	flex-direction: column;
+	
+	& > *
+	{
+		padding: 0.5em;
+	}
+	
+	span
+	{
+		overflow: auto;
+		word-wrap: break-word;
+		hyphens: auto;
+	}
+	
+	span:last-of-type
+	{
+		margin-top:auto;
+	}
+}
+
+.hide
+{
+	display: none;
+}

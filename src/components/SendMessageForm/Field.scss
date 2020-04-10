@@ -1,0 +1,21 @@
+label
+{
+	position: relative;
+	padding-top: 2em;
+	padding-bottom: 2em;
+	
+	span
+	{
+		position: absolute;
+		left: 0;
+		transition: 1s all;
+	}
+
+	span:hover:not(:empty), input:hover ~ span:not(:empty), input:focus ~ span:not(:empty), input:not(:placeholder-shown) ~ span
+	{
+		background-color: black;
+		color: white;
+		margin-top: -1.2em;
+		border-radius: 15px 15px 0 0;
+	}
+}

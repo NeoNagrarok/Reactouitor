@@ -1,0 +1,88 @@
+.modal
+{
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(50, 50, 50, 0.65);
+	z-index: 500;
+	
+	.inner
+	{
+		position: absolute;
+		left:0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		background-color: white;
+		width: 25em;
+		height: 30em;
+		margin: auto;
+		overflow: auto;
+		
+		.touit-container
+		{
+			margin-top: -2em;
+			padding-top: 2em;
+			padding-bottom: 10em;
+		}
+		
+		.closeDiv
+		{
+			text-align: right;
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+
+			button:first-of-type
+			{
+				position: sticky;
+				top: 0;
+			}
+		}
+		
+		form
+		{
+			position: fixed;
+			bottom: 0;
+			width: 25em;
+
+			fieldset
+			{
+				flex-direction: column;
+				justify-content: space-around;
+				margin: 0;
+				padding-top: 1em;
+
+				
+				label
+				{
+					padding: 0;
+					position: relative;
+					
+					input
+					{
+						width: 50%;
+					}
+					
+					span
+					{
+						right: 0;
+					}
+
+					span:hover:not(:empty), input:hover ~ span:not(:empty), input:focus ~ span:not(:empty), input:not(:placeholder-shown) ~ span
+					{
+						right: auto;
+						left: 0;
+						border-radius: 0;
+						width: 5em;
+						margin-top: 0;
+					}
+				}
+			}
+		}
+	}
+}

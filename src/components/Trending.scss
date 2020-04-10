@@ -1,0 +1,36 @@
+.trending
+{
+	background-color: silver;
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 2em;
+	width: 15em;
+	transition: all 0.5s;
+	margin: auto;
+	display: flex;
+	justify-content: space-around;
+	
+	.trending-section
+	{
+		display: none;
+	}
+	
+	&:hover, &:focus-within
+	{
+		height: 15em;
+		width: 100%;
+		
+		.trending-header
+		{
+			display: none;
+		}
+		
+		.trending-section
+		{
+			display: initial;
+			width: 20vw;
+		}
+	}
+}
