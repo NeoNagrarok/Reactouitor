@@ -23,11 +23,13 @@ const Trending = (props) => {
 				<h3>
 					Most liked Touits
 				</h3>
+					{props.listTouits ? props.listTouits.messages.slice().sort((a,b) => b.likes - a.likes).slice(0, _TREND_MAX_NBR_WORDS_).map((m, i) => <li>{m.id + ' (' + m.likes + ')'}</li>) : "Undefined"}
 			</section>
 			<section className="trending-section">
 				<h3>
 					Most commented Touits
 				</h3>
+					{props.listTouits ? props.listTouits.messages.slice().sort((a,b) => b.comments_count - a.comments_count).slice(0, _TREND_MAX_NBR_WORDS_).map((m, i) => <li>{m.id + ' (' + m.comments_count + ')'}</li>) : "Undefined"}
 			</section>
 			<section className="trending-section">
 				<h3>

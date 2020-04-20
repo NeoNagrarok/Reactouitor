@@ -28,27 +28,25 @@ function App() {
 	const [trending, setTrending] = useState(null);
 	const [dateRefresh, setDateRefresh] = useState(Date.now());
 
-	const [inter, setInter] = useState(setInterval(() => {
-	
-		if (listTouits === null)// || !((date - dateRefresh) % 9000))
-		{
+
+	useEffect(() => {
 			TouitAPI.getList(setTrending, 'trending');
 			TouitAPI.getList(setListTouits);
-		}
-	},1500));
+	  const interval = setInterval(() => {
+			TouitAPI.getList(setTrending, 'trending');
+			TouitAPI.getList(setListTouits);
+	  }, 1500);
+	  return () => clearInterval(interval);
+	}, []);
 		
 	let date = "Undifined";
 	if (listTouits)
 		date = (new Date(listTouits.ts*1000)).toLocaleString();
-		
-	useEffect(() => {
-		setTimeout(clearInterval, 1500, inter);
-	});
 	return (
 		<main className="App">
 			<Header date={date}/>
 			<TouitContainer listTouits={listTouits} />
-			<Trending trending={trending}/>
+			<Trending listTouits={listTouits} trending={trending}/>
 		</main>
 	);
 }
